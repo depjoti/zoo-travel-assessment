@@ -11,12 +11,10 @@ const SearchResults = ({ results }) => {
         <div key={result.id} className='flex flex-col border border-gray-300 rounded-lg shadow-md p-4 items-center'>
           {result.legs.map((leg) => (
             <div key={leg.ref} className='mb-4 w-full'>
-               {/* <div className='text-center font-bold text-lg mb-2'>
-                {leg.segmentDetails[0].origin.airport - leg.segmentDetails[0].destination.airport}
-              </div> */}
               <div className='text-center font-bold text-lg mb-2'>
-                {leg.segment.departureLocation - leg.segment.arrivalLocation}
+                {`${leg.segment.departureLocation} - ${leg.segment.arrivalLocation}`}
               </div>
+               {/* <div className='text-center font-bold text-lg mb-2'>{`${leg.segmentDetails[0].origin.airport} - ${leg.segmentDetails[0].destination.airport}`}</div> */}
               {leg.segmentDetails.map((segmentDetail) => (
                 <div key={segmentDetail.id} className='flex flex-col mb-4'>
                   <div className='text-center mb-2'>
